@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#982b2d" />
+    <meta
+      name="description"
+      content="企业健康初诊与咨询 Agent 路由——AI 架构师项目作品集"
+    />
+    <title>AI 架构案例研究 · 企业健康初诊与咨询路由</title>
+    <link rel="stylesheet" href="/src/portfolio.css" />
+  </head>
+  <body>
+    <header class="folio-nav">
+      <a class="folio-brand" href="./portfolio.html">
+        <b>AI ARCHITECTURE</b>
+        <span>项目案例研究</span>
+      </a>
+      <nav aria-label="作品集导航">
+        <a href="#reframe">业务重构</a>
+        <a href="#system">系统设计</a>
+        <a href="#validation">验证方法</a>
+        <a class="nav-demo" href="./?v=3.1">打开产品演示 ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="folio-hero">
+        <div class="hero-index" aria-hidden="true">CASE / 01</div>
+        <div class="hero-copy">
+          <p class="eyebrow">企业级咨询 Agent · 产品与 AI 架构</p>
+          <h1>不是把问卷<br />做成网页，</h1>
+          <h2>而是把它重构为企业问题进入咨询能力网络的入口。</h2>
+          <p class="hero-lead">
+            面对咨询公司“将零散经验与企业知识转化为可复用 AI 能力”的需求，我以一份企业健康自测 Excel
+            为验证场景，设计了从问题表达、证据核验到业务与专家路由的完整链路。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="./?v=3.1">体验 V3.1 产品 →</a>
+            <a href="#outcome">查看项目成果 ↓</a>
+          </div>
+        </div>
+        <aside class="hero-brief">
+          <div><small>我的角色</small><strong>AI 架构 / 产品设计 / 原型实现</strong></div>
+          <div><small>任务切口</small><strong>企业健康自测 Excel</strong></div>
+          <div><small>核心命题</small><strong>咨询知识如何被结构化、调用与验证</strong></div>
+          <div><small>当前状态</small><strong>V3.1 可交互原型</strong></div>
+        </aside>
+      </section>
+
+      <section class="thesis" id="reframe">
+        <header class="section-head">
+          <p>01 · BUSINESS REFRAMING</p>
+          <h2>我先重新定义任务，再决定 AI 放在哪里。</h2>
+        </header>
+        <div class="before-after">
+          <article>
+            <small>表层任务</small>
+            <h3>数字化一份问卷</h3>
+            <p>把 Excel 搬到网页、自动计算分数，再输出一份企业健康报告。</p>
+          </article>
+          <i aria-hidden="true">→</i>
+          <article class="after">
+            <small>重构后的任务</small>
+            <h3>建立企业级咨询入口</h3>
+            <p>帮助企业说清问题、形成可核验假设，并路由到案例、专业 Agent、业务单元和真人咨询师。</p>
+          </article>
+        </div>
+        <blockquote>
+          如果原始问卷存在偏差，直接把分数转换成服务推荐，只会把偏差自动化。问卷因此被重新定位为
+          <b>企业自述之后的定向核验工具</b>，而不是最终诊断依据。
+        </blockquote>
+      </section>
+
+      <section class="screen-feature">
+        <div class="screen-copy">
+          <p class="eyebrow">产品入口</p>
+          <h2>先让企业理解判断方法，再邀请它开始诊断。</h2>
+          <p>首页不直接抛出长问卷，而是解释结果能回答什么、不能回答什么，让用户先建立正确预期。</p>
+        </div>
+        <figure>
+          <img src="./portfolio-assets/01-首页_从问卷到咨询入口.png" alt="企业健康初诊首页" />
+        </figure>
+      </section>
+
+      <section class="system" id="system">
+        <header class="section-head light">
+          <p>02 · DIAGNOSTIC ROUTING</p>
+          <h2>从一句模糊描述，到一条可解释的咨询路由。</h2>
+        </header>
+        <div class="route-line" aria-label="诊断与咨询路由流程">
+          <article><b>企业自述</b><span>发生了什么</span></article>
+          <article><b>候选信号</b><span>可能涉及什么</span></article>
+          <article><b>事件核验</b><span>哪些事实成立</span></article>
+          <article><b>机制假设</b><span>还需要什么证据</span></article>
+          <article><b>能力路由</b><span>谁适合继续承接</span></article>
+        </div>
+        <p class="system-boundary">
+          企业自述只形成风险信号和待核验假设；信息不足时系统保留不确定性，高风险或跨领域问题升级给真人咨询师。
+        </p>
+      </section>
+
+      <section class="evidence-grid">
+        <article class="evidence-card wide">
+          <div><small>STEP 01</small><h3>自由表达，Agent 负责结构化</h3><p>提取事件、时间、影响、角色和已采取措施，并解释为什么映射到相关核验题。</p></div>
+          <img src="./portfolio-assets/04-企业自述_AI问题映射.png" alt="企业自述与 AI 问题映射" />
+        </article>
+        <article class="evidence-card">
+          <div><small>STEP 02</small><h3>企业确认真实事件</h3><p>最多选择三个并发事件，再明确当前最希望优先解决的问题。</p></div>
+          <img src="./portfolio-assets/05-经营事件_企业确认组合.png" alt="经营事件确认" />
+        </article>
+        <article class="evidence-card">
+          <div><small>STEP 03</small><h3>隐私和授权前置</h3><p>企业完整阅读后才能填写；诊断、咨询、案例和训练授权相互独立。</p></div>
+          <img src="./portfolio-assets/03-隐私前置_阅读后才能填写.png" alt="隐私声明前置" />
+        </article>
+      </section>
+
+      <section class="trust-window">
+        <header class="section-head">
+          <p>03 · TRUST BEFORE CONVERSION</p>
+          <h2>先证明组织解决过类似问题，再推荐某一位咨询师。</h2>
+        </header>
+        <div class="trust-gallery">
+          <figure>
+            <img src="./portfolio-assets/08-案例匹配_先建立能力信任.png" alt="相似案例匹配卡片" />
+            <figcaption><b>案例匹配</b><span>展示相似依据、方案方向、授权状态与结果边界。</span></figcaption>
+          </figure>
+          <figure>
+            <img src="./portfolio-assets/09-咨询师路由_事业部与专家匹配.png" alt="咨询师路由卡片" />
+            <figcaption><b>专家承接</b><span>结合问题域、业务单元、方法、行业与档期形成候选。</span></figcaption>
+          </figure>
+        </div>
+        <p class="demo-note">当前案例、咨询师、相似度和结果指标均为模拟演示数据，不代表和君真实客户、项目或履历。</p>
+      </section>
+
+      <section class="agent-org">
+        <header class="section-head light">
+          <p>04 · ENTERPRISE AGENT ORGANIZATION</p>
+          <h2>入口最终可以成为公司级 Agent 团队的任务调度中枢。</h2>
+        </header>
+        <div class="org-map">
+          <article class="orchestrator"><small>ORCHESTRATOR</small><b>入口与路由 Agent</b><span>识别问题、拆分任务、控制升级</span></article>
+          <div class="agent-row">
+            <article><b>战略 Agent</b><span>目标、增长与商业模式</span></article>
+            <article><b>组织 Agent</b><span>权责、协作与管理机制</span></article>
+            <article><b>交付 Agent</b><span>流程、质量与资源配置</span></article>
+            <article><b>人才 Agent</b><span>能力、激励与团队绩效</span></article>
+          </div>
+          <article class="human"><small>HUMAN IN THE LOOP</small><b>真人咨询师复核与负责</b><span>复杂判断 · 客户共创 · 重大决策</span></article>
+        </div>
+      </section>
+
+      <section class="validation" id="validation">
+        <header class="section-head">
+          <p>05 · TWO EVIDENCE LOOPS</p>
+          <h2>路由可信，需要用户价值与专业可靠性同时成立。</h2>
+        </header>
+        <div class="validation-columns">
+          <article>
+            <small>ONLINE / 用户有效性</small>
+            <h3>用户是否觉得有用？</h3>
+            <ul>
+              <li>结果理解度与方向认可率</li>
+              <li>证据补充率与流程完成率</li>
+              <li>案例查看与咨询授权率</li>
+              <li>通过 A/B 测试优化提问和呈现</li>
+            </ul>
+          </article>
+          <article>
+            <small>OFFLINE / 专业可靠性</small>
+            <h3>系统是否判断得对？</h3>
+            <ul>
+              <li>事实提取和问题映射准确性</li>
+              <li>咨询师复核后的路由一致率</li>
+              <li>证据链完整度与可解释性</li>
+              <li>拒绝判断和转人工能力</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="outcome" id="outcome">
+        <header class="section-head light">
+          <p>06 · CURRENT DELIVERY</p>
+          <h2>我已经交付什么，以及什么还没有完成。</h2>
+        </header>
+        <div class="outcome-grid">
+          <article>
+            <small>已完成</small>
+            <ul>
+              <li>V3.1 可交互网页原型</li>
+              <li>自由文本与问题映射 Agent</li>
+              <li>角色、事件与核验题路由</li>
+              <li>案例、业务单元和咨询师推荐</li>
+              <li>隐私前置与授权预览</li>
+              <li>硅基流动服务端接入与本地降级</li>
+            </ul>
+          </article>
+          <article class="not-yet">
+            <small>尚未完成 / 不虚构</small>
+            <ul>
+              <li>真实企业诊断准确率验证</li>
+              <li>正式案例库与咨询师目录</li>
+              <li>云端密钥保险箱和安全审计</li>
+              <li>可用于训练的授权反馈数据</li>
+              <li>模型对咨询师专业判断的替代</li>
+            </ul>
+          </article>
+        </div>
+        <figure class="consent-shot">
+          <img src="./portfolio-assets/10-企业授权_诊断与销售线索隔离.png" alt="企业主动授权提交界面" />
+        </figure>
+      </section>
+
+      <section class="closing">
+        <p>AI ARCHITECTURE IS BUSINESS ARCHITECTURE</p>
+        <h2>我的优势不是从新技术出发寻找场景，<br />而是从真实业务出发，为模型、规则、Agent 和人工找到各自的位置。</h2>
+        <div>
+          <a class="primary-action" href="./?v=3.1">进入产品演示 →</a>
+          <a href="https://github.com/SSkeaido/orghealth-ai-consulting-demo">查看 GitHub ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="folio-footer">
+      <span>企业健康初诊与咨询 Agent 路由 · 个人项目作品集</span>
+      <span>所有企业、案例、咨询师与结果数据均为模拟演示</span>
+    </footer>
+  </body>
+</html>

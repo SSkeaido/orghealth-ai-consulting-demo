@@ -1,6 +1,7 @@
 # OrgHealth
 
-在线演示：[企业健康初诊 V3.1](https://sskeaido.github.io/orghealth-ai-consulting-demo/?v=3.1)
+在线演示：[企业健康初诊 V3.1](https://sskeaido.github.io/orghealth-ai-consulting-demo/?v=3.1)  
+项目作品集：[AI 架构案例研究](https://sskeaido.github.io/orghealth-ai-consulting-demo/portfolio.html)
 
 > 本仓库为交互原型与产品作品集项目。当前使用模拟数据，不构成正式咨询结论；浏览器中的填写内容不会自动提交给咨询顾问，也不会用于模型训练。
 
