@@ -3,3 +3,6 @@ dist/
 *.log
 *.tsbuildinfo
 package-lock.json
+.env
+.env.*
+!.env.example

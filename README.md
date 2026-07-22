@@ -28,6 +28,17 @@ pnpm install
 pnpm dev
 ```
 
+### 硅基流动语义解析（可选）
+
+前端不会保存或携带 API Key。模型调用必须经过同源服务端接口：
+
+1. 将项目部署到支持 `/api` 函数的平台（仓库包含 Vercel API 路由）。
+2. 在服务端配置 `SILICONFLOW_API_KEY`。
+3. 可用 `SILICONFLOW_MODEL` 切换模型，默认 `deepseek-ai/DeepSeek-V3.2`。
+4. 构建前设置 `VITE_SEMANTIC_API_URL=/api/analyze`。
+
+未配置接口时，产品自动使用原有本地规则映射。不要把硅基流动 API Key 写进 `VITE_*` 变量或前端源码。
+
 质量检查：
 
 ```bash

@@ -16,6 +16,10 @@ import {
 } from "./problemMappingAgent";
 import { routeConsultingServices } from "./serviceRoutingAgent";
 import {
+  analyzeCompanyProblemWithAI,
+  isSemanticAiEnabled,
+} from "./semanticAnalysisApi";
+import {
   getContentEvidenceSchema,
   type ContentEvidenceSchema,
 } from "./contentEvidence";
@@ -617,9 +621,11 @@ function V31PrivacyGate({ onAccept }: { onAccept: () => void }) {
           <article>
             <b>01</b>
             <div>
-              <h3>当前版本只在浏览器内处理</h3>
+              <h3>{isSemanticAiEnabled ? "基础信息留在浏览器，问题文本按授权解析" : "当前版本只在浏览器内处理"}</h3>
               <p>
-                企业名称、问题描述、事件选择和问卷回答只保存在当前页面的运行内存中。刷新或关闭页面后，本次内容会被清除。
+                {isSemanticAiEnabled
+                  ? "企业名称、事件选择和问卷回答保存在当前页面；问题文本会发送到硅基流动模型服务完成本次语义解析。"
+                  : "企业名称、问题描述、事件选择和问卷回答只保存在当前页面的运行内存中。刷新或关闭页面后，本次内容会被清除。"}
               </p>
             </div>
           </article>
@@ -635,9 +641,11 @@ function V31PrivacyGate({ onAccept }: { onAccept: () => void }) {
           <article>
             <b>03</b>
             <div>
-              <h3>不用于模型训练或案例库建设</h3>
+              <h3>不自动用于模型训练或案例库建设</h3>
               <p>
-                当前问题解析使用本地规则，不会把企业原始描述发送给外部模型，也不会将填写内容自动用于训练、研究或案例库建设。
+                {isSemanticAiEnabled
+                  ? "问题文本仅为完成本次语义解析而发送至硅基流动；本产品不会把填写内容自动加入训练集、研究数据或案例库。请勿填写客户名单、合同原文等不必要敏感信息。"
+                  : "当前问题解析使用本地规则，不会把企业原始描述发送给外部模型，也不会将填写内容自动用于训练、研究或案例库建设。"}
               </p>
             </div>
           </article>
@@ -703,10 +711,13 @@ function V3Entry({
   const [industry, setIndustry] = useState("企业服务 / SaaS");
   const [size, setSize] = useState("51—100人");
   const [challenge, setChallenge] = useState("");
-  const problemMapping = useMemo(
+  const localProblemMapping = useMemo(
     () => mapCompanyProblem(challenge, lens),
     [challenge, lens],
   );
+  const [aiProblemMapping, setAiProblemMapping] = useState<ProblemMapping | null>(null);
+  const [aiMappingStatus, setAiMappingStatus] = useState<"idle" | "loading" | "ready" | "fallback">("idle");
+  const problemMapping = aiProblemMapping ?? localProblemMapping;
   const [acceptedMappedIds, setAcceptedMappedIds] = useState<number[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const [primaryId, setPrimaryId] = useState("");
@@ -716,6 +727,37 @@ function V3Entry({
     .filter(Boolean);
   useScrollToPageTop(step);
   useDeskMotion(`v3-entry-${step}-${lens}-${selected.join("-")}`);
+
+  useEffect(() => {
+    setAiProblemMapping(null);
+    if (!isSemanticAiEnabled || challenge.trim().length < 12) {
+      setAiMappingStatus("idle");
+      return;
+    }
+    const controller = new AbortController();
+    setAiMappingStatus("loading");
+    const timer = window.setTimeout(async () => {
+      try {
+        const result = await analyzeCompanyProblemWithAI({
+          text: challenge,
+          lens,
+          industry,
+          size,
+          signal: controller.signal,
+        });
+        if (result) {
+          setAiProblemMapping(result);
+          setAiMappingStatus("ready");
+        }
+      } catch {
+        if (!controller.signal.aborted) setAiMappingStatus("fallback");
+      }
+    }, 700);
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [challenge, lens, industry, size]);
 
   useEffect(() => {
     setAcceptedMappedIds(
@@ -839,7 +881,7 @@ function V3Entry({
             <label className="v3-challenge">
               <span className="v3-challenge-label">
                 <b>企业当前遇到的难点和问题</b>
-                <small>AI 辅助输入 · 可选</small>
+                <small>{isSemanticAiEnabled ? "硅基流动 AI 解析 · 可选" : "本地规则解析 · 可选"}</small>
               </span>
               <textarea
                 value={challenge}
@@ -849,7 +891,15 @@ function V3Entry({
               />
               <span className="v3-challenge-meta">
                 <small>
-                  本版先保留企业原始描述；接入模型后，将用于推荐经营事件、生成追问和辅助分析。
+                  {isSemanticAiEnabled
+                    ? aiMappingStatus === "loading"
+                      ? "资深咨询师 Agent 正在分析；处理失败时自动回退本地规则。"
+                      : aiMappingStatus === "ready"
+                        ? "已由资深咨询师 Agent 生成候选信号、事件与核验题。"
+                        : aiMappingStatus === "fallback"
+                          ? "模型暂不可用，当前结果来自本地规则。"
+                          : "问题文本将在你接受隐私说明后发送至硅基流动完成本次解析。"
+                    : "当前使用本地规则推荐经营事件、候选核验题和补充问题。"}
                 </small>
                 <em>{challenge.length} / 800</em>
               </span>
