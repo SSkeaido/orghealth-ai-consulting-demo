@@ -69,68 +69,129 @@ export const serviceUnits: ServiceUnit[] = [
   {
     id: "strategy",
     wing: "和君咨询",
-    name: "战略与集团管控业务单元（演示）",
-    services: ["企业战略规划", "集团战略与集团管控", "商业模式重构"],
+    name: "企业战略规划（演示）",
+    services: ["企业战略规划"],
     keywords: ["战略", "增长", "竞争", "商业模式", "集团", "行业", "决策"],
     signalIds: ["growth", "governance", "innovation"],
   },
   {
+    id: "planning",
+    wing: "和君咨询",
+    name: "企业和政府的五年规划（演示）",
+    services: ["企业和政府的五年规划"],
+    keywords: ["五年规划", "政府规划", "长期规划"],
+    signalIds: ["growth", "governance"],
+  },
+  {
     id: "organization",
     wing: "和君咨询",
-    name: "组织、流程与人效业务单元（演示）",
-    services: ["组织、流程和管控", "人效提升", "人才发展与企业大学"],
-    keywords: ["组织", "流程", "协同", "权责", "执行", "人才", "绩效", "交付"],
-    signalIds: ["coordination", "people", "delivery", "change"],
+    name: "组织、流程和管控（演示）",
+    services: ["组织、流程和管控"],
+    keywords: ["组织", "流程", "协同", "权责", "执行", "管控", "交付"],
+    signalIds: ["coordination", "delivery", "change"],
+  },
+  {
+    id: "people",
+    wing: "和君咨询",
+    name: "人力资源和企业文化（演示）",
+    services: ["人力资源和企业文化"],
+    keywords: ["人力", "人才", "文化", "绩效", "激励", "管理者", "梯队"],
+    signalIds: ["people", "change"],
   },
   {
     id: "market",
     wing: "和君咨询",
-    name: "品牌、营销与客户增长业务单元（演示）",
-    services: ["品牌规划和营销咨询", "客户价值与增长路径", "产品与定价优化"],
+    name: "品牌规划和营销咨询（演示）",
+    services: ["品牌规划和营销咨询"],
     keywords: ["品牌", "营销", "客户", "销售", "定价", "获客", "增长"],
     signalIds: ["growth", "customer", "profit"],
   },
   {
     id: "operations",
     wing: "和君咨询",
-    name: "精益运营与供应链业务单元（演示）",
-    services: ["精益生产和供应链管理", "交付体系优化", "质量与运营改善"],
+    name: "精益生产和供应链管理（演示）",
+    services: ["精益生产和供应链管理"],
     keywords: ["交付", "质量", "供应链", "生产", "库存", "成本", "效率"],
     signalIds: ["delivery", "profit"],
   },
   {
     id: "digital",
     wing: "和君咨询",
-    name: "数字化转型与 AI 应用业务单元（演示）",
-    services: ["数字化转型和AI应用", "数据化经营机制", "流程数字化重构"],
+    name: "数字化转型和AI应用（演示）",
+    services: ["数字化转型和AI应用"],
     keywords: ["数字", "数据", "系统", "AI", "信息", "流程"],
     signalIds: ["digital", "change"],
   },
   {
     id: "risk",
     wing: "和君咨询",
-    name: "内控、风险与治理业务单元（演示）",
-    services: ["内控、风险和合规管理", "公司治理和股权结构设计", "危机治理"],
+    name: "内控、风险和合规管理（演示）",
+    services: ["内控、风险和合规管理"],
     keywords: ["治理", "风险", "合规", "内控", "股权", "危机", "决策"],
     signalIds: ["governance"],
   },
   {
-    id: "capital",
-    wing: "和君资本",
-    name: "资本运作与融资业务单元（演示）",
-    services: ["融资顾问", "企业资本运作总体规划", "并购重组与战略投资"],
-    keywords: ["资本", "融资", "现金", "并购", "投资", "上市", "股权"],
-    signalIds: ["profit", "governance"],
+    id: "entrepreneur",
+    wing: "和君咨询",
+    name: "科技创业咨询和辅导（演示）",
+    services: ["科技创业咨询和辅导"],
+    keywords: ["科技创业", "创业", "创新", "新业务", "商业化", "孵化"],
+    signalIds: ["innovation", "growth"],
   },
   {
-    id: "academy",
-    wing: "和君商学",
-    name: "企业培训与人才培养业务单元（演示）",
-    services: ["企业定制化培训", "管理者培养", "企业大学与人才梯队"],
-    keywords: ["培训", "人才", "管理者", "能力", "文化", "梯队"],
-    signalIds: ["people", "change"],
+    id: "global",
+    wing: "和君咨询",
+    name: "出海和全球化咨询（演示）",
+    services: ["出海和全球化咨询"],
+    keywords: ["出海", "全球化", "海外", "国际市场"],
+    signalIds: ["growth", "governance"],
+  },
+  {
+    id: "regional",
+    wing: "和君咨询",
+    name: "区域经济和产业规划（演示）",
+    services: ["区域经济和产业规划"],
+    keywords: ["区域经济", "产业规划", "产业集群", "区域发展"],
+    signalIds: ["growth", "governance"],
+  },
+  {
+    id: "park",
+    wing: "和君咨询",
+    name: "园区发展规划和运营管理（演示）",
+    services: ["园区发展规划和运营管理"],
+    keywords: ["园区", "园区运营", "招商", "产业园"],
+    signalIds: ["growth", "delivery"],
   },
 ];
+
+const eventServicePriority: Record<string, string[]> = {
+  A01: ["market"],
+  A02: ["market", "strategy"],
+  A03: ["strategy", "market"],
+  A04: ["organization"],
+  A05: ["operations", "organization"],
+  A06: ["organization", "risk"],
+  A07: ["organization", "people"],
+  A08: ["people"],
+  A09: ["people", "organization"],
+  A10: ["organization", "people"],
+  A11: ["digital", "organization"],
+  A12: ["entrepreneur", "strategy"],
+  B01: ["strategy"],
+  B02: ["strategy", "market"],
+  B03: ["strategy", "entrepreneur"],
+  B04: ["risk", "strategy"],
+  B05: ["strategy", "risk"],
+  B06: ["risk", "organization"],
+  B07: ["organization", "strategy"],
+  B08: ["organization", "people"],
+  B09: ["people", "organization"],
+  B10: ["organization", "risk"],
+  B11: ["risk", "market"],
+  B12: ["digital", "organization"],
+  B13: ["entrepreneur", "strategy"],
+  B14: ["risk", "strategy"],
+};
 
 export const fictionalConsultants: ConsultantProfile[] = [
   {
@@ -152,7 +213,7 @@ export const fictionalConsultants: ConsultantProfile[] = [
     title: "组织与人效顾问（虚拟）",
     base: "上海",
     years: 11,
-    unitIds: ["organization", "academy"],
+    unitIds: ["organization", "people"],
     specialties: ["组织设计", "权责机制", "绩效与人才梯队"],
     industries: ["专业服务", "制造业", "企业服务"],
     methods: ["责任地图", "决策权诊断", "关键岗位访谈"],
@@ -204,7 +265,7 @@ export const fictionalConsultants: ConsultantProfile[] = [
     title: "资本与治理顾问（虚拟）",
     base: "北京",
     years: 15,
-    unitIds: ["capital", "risk"],
+    unitIds: ["risk", "strategy"],
     specialties: ["融资规划", "公司治理", "并购整合"],
     industries: ["高新科技", "医药医疗", "制造业"],
     methods: ["资本结构复盘", "治理责任矩阵", "投融资情景分析"],
@@ -268,7 +329,7 @@ export const fictionalCases: CaseProfile[] = [
     industry: "高新科技",
     scale: "约 220 人",
     problemSignals: ["innovation", "growth", "governance", "profit"],
-    unitIds: ["strategy", "capital", "risk"],
+    unitIds: ["strategy", "entrepreneur", "risk"],
     solution: "创新组合分级 + 阶段门机制 + 商业验证与资本规划",
     outcomes: [
       { label: "试点转化率", value: "+26%" },
@@ -284,7 +345,7 @@ export const fictionalCases: CaseProfile[] = [
     industry: "专业服务",
     scale: "约 180 人",
     problemSignals: ["people", "coordination", "change"],
-    unitIds: ["organization", "academy"],
+    unitIds: ["organization", "people"],
     solution: "关键岗位梳理 + 绩效反馈机制 + 管理者训练营",
     outcomes: [
       { label: "骨干保留率", value: "+17pct" },
@@ -303,11 +364,24 @@ export function routeConsultingServices(input: {
   industry: string;
   events: DiagnosticEvent[];
   mapping: ProblemMapping;
+  primaryId?: string;
 }): ConsultingRouteResult {
   const eventText = input.events
     .flatMap((event) => [event.name, event.direction, ...event.routes])
     .join(" ");
   const signalIds = new Set(input.mapping.signals.map((signal) => signal.id));
+  const orderedEvents = [...input.events].sort((a, b) => {
+    if (a.id === input.primaryId) return -1;
+    if (b.id === input.primaryId) return 1;
+    return 0;
+  });
+  const explicitPriority = orderedEvents.flatMap(
+    (event) => eventServicePriority[event.id] ?? [],
+  );
+  const explicitRank = new Map<string, number>();
+  explicitPriority.forEach((unitId, index) => {
+    if (!explicitRank.has(unitId)) explicitRank.set(unitId, index);
+  });
 
   const routes = serviceUnits
     .map((unit): ServiceRoute => {
@@ -315,8 +389,14 @@ export function routeConsultingServices(input: {
         eventText.includes(keyword),
       );
       const signalHits = unit.signalIds.filter((id) => signalIds.has(id));
-      const score = keywordHits.length * 2 + signalHits.length * 3;
+      const priority = explicitRank.get(unit.id);
+      const explicitScore =
+        priority === undefined ? 0 : Math.max(12, 30 - priority * 4);
+      const score = explicitScore + keywordHits.length * 2 + signalHits.length * 3;
       const reasons = [
+        priority !== undefined
+          ? `所选经营事件明确映射到“${unit.services[0]}”`
+          : "未被当前经营事件列为优先业务",
         signalHits.length
           ? `企业自述包含${signalHits.length}类相关经营信号`
           : "企业自述尚无直接信号",
@@ -328,11 +408,20 @@ export function routeConsultingServices(input: {
         unit,
         score,
         reasons,
-        matchedServices: unit.services.slice(0, 2),
+        matchedServices: unit.services,
       };
     })
     .filter((route) => route.score > 0)
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => {
+      const aRank = explicitRank.get(a.unit.id);
+      const bRank = explicitRank.get(b.unit.id);
+      if (aRank !== undefined || bRank !== undefined) {
+        if (aRank === undefined) return 1;
+        if (bRank === undefined) return -1;
+        if (aRank !== bRank) return aRank - bRank;
+      }
+      return b.score - a.score;
+    })
     .slice(0, 3);
 
   const fallbackRoutes = routes.length
@@ -388,6 +477,9 @@ export function routeConsultingServices(input: {
   const consultants = fictionalConsultants
     .map((consultant): ConsultantMatch => {
       const matchedUnits = consultant.unitIds.filter((id) => routeIds.has(id));
+      const matchesPrimaryRoute = consultant.unitIds.includes(
+        fallbackRoutes[0]?.unit.id,
+      );
       const industryMatch = consultant.industries.some(
         (item) => item.includes(industry) || industry.includes(item),
       );
@@ -396,8 +488,14 @@ export function routeConsultingServices(input: {
       );
       return {
         consultant,
-        score: matchedUnits.length * 4 + (industryMatch ? 2 : 0),
+        score:
+          matchedUnits.length * 4 +
+          (matchesPrimaryRoute ? 8 : 0) +
+          (industryMatch ? 2 : 0),
         reasons: [
+          matchesPrimaryRoute
+            ? `专业方向直接覆盖首要业务“${fallbackRoutes[0].matchedServices[0]}”`
+            : "专业方向覆盖次级候选业务",
           `专业方向覆盖${matchedUnits.length}个建议业务单元`,
           industryMatch
             ? `具有${input.industry}相关经验`

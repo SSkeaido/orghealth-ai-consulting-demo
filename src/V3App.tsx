@@ -1274,8 +1274,14 @@ function V3Analysis({
         industry: profile.industry,
         events: profile.events,
         mapping: profile.problemMapping,
+        primaryId: profile.primaryId,
       }),
-    [profile.events, profile.industry, profile.problemMapping],
+    [
+      profile.events,
+      profile.industry,
+      profile.primaryId,
+      profile.problemMapping,
+    ],
   );
   const [showConsent, setShowConsent] = useState(false);
   const [contactName, setContactName] = useState("");
@@ -1448,12 +1454,19 @@ function V3Analysis({
         <div className="v3-routing-chain" aria-label="咨询服务推荐路径">
           <span>
             <small>企业问题</small>
-            <strong>{profile.events[0]?.name ?? "待界定"}</strong>
+            <strong>
+              {profile.events.find((event) => event.id === profile.primaryId)
+                ?.name ?? profile.events[0]?.name ?? "待界定"}
+            </strong>
           </span>
           <i>→</i>
           <span>
             <small>建议承接业务</small>
-            <strong>{serviceRouting.routes[0]?.unit.wing ?? "综合诊断"}</strong>
+            <strong>
+              {serviceRouting.routes[0]
+                ? `${serviceRouting.routes[0].unit.wing} · ${serviceRouting.routes[0].matchedServices[0]}`
+                : "综合诊断"}
+            </strong>
           </span>
           <i>→</i>
           <span>
