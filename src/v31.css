@@ -34,7 +34,7 @@
 
 .v31-evidence-note span {
   color: var(--v3-muted);
-  font-size: 11px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -55,7 +55,7 @@
 .v31-evidence-note aside small {
   margin-top: 0.35rem;
   color: var(--v3-muted);
-  font-size: 8px;
+  font-size: 18px;
 }
 
 .v31-evidence-card {
@@ -91,7 +91,7 @@
 .v31-evidence-card > header span {
   color: var(--v3-accent);
   font-family: "Cascadia Mono", monospace;
-  font-size: 9px;
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -100,13 +100,13 @@
   border: 1px solid #e2c8c2;
   border-radius: 999px;
   color: #875c56;
-  font-size: 8px;
+  font-size: 18px;
   font-style: normal;
 }
 
 .v31-evidence-card > header > strong {
   color: var(--v3-muted);
-  font-size: 9px;
+  font-size: 18px;
 }
 
 .v31-evidence-card.ready > header > strong {
@@ -128,7 +128,7 @@
   max-width: 760px;
   margin: 0.45rem 0 0;
   color: var(--v3-muted);
-  font-size: 11px;
+  font-size: 18px;
   line-height: 1.65;
 }
 
@@ -153,13 +153,13 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--v3-ink);
-  font-size: 10px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .v31-evidence-fields label > span b {
   color: var(--v3-accent);
-  font-size: 7px;
+  font-size: 18px;
 }
 
 .v31-evidence-fields input,
@@ -171,7 +171,7 @@
   background: #fcfbfa;
   color: var(--v3-ink);
   font: inherit;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.6;
   outline: none;
 }
@@ -212,7 +212,7 @@
 .v31-evidence-card > footer small,
 .v31-evidence-card > footer p b {
   color: var(--v3-muted);
-  font-size: 8px;
+  font-size: 18px;
 }
 
 .v31-evidence-card > footer span {
@@ -220,13 +220,13 @@
   border: 1px solid #e5d7d2;
   background: #fff;
   color: #6d6562;
-  font-size: 8px;
+  font-size: 18px;
 }
 
 .v31-evidence-card > footer p {
   margin: 0;
   color: #6d6562;
-  font-size: 9px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -254,7 +254,7 @@
 
 .v31-scale-supplement > header p {
   color: var(--v3-accent);
-  font-size: 8px;
+  font-size: 18px;
 }
 
 .v31-scale-supplement > header h3 {
@@ -265,7 +265,7 @@
 
 .v31-scale-supplement > header span {
   color: var(--v3-muted);
-  font-size: 8px;
+  font-size: 18px;
 }
 
 @media (max-width: 760px) {
