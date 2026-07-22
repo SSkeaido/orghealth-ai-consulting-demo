@@ -1,5 +1,7 @@
 # OrgHealth
 
+> **版权与使用限制：本项目并非开源软件，仅允许个人学习、非商业教育研究和非商业评估。未经作者书面许可，禁止将代码、设计、文档、图片或其衍生内容用于产品、收费服务、咨询交付、企业经营或其他商业用途。详见 [LICENSE](./LICENSE)。**
+
 在线演示：[企业健康初诊 V3.1](https://sskeaido.github.io/orghealth-ai-consulting-demo/?v=3.1)  
 项目作品集：[AI 架构案例研究](https://sskeaido.github.io/orghealth-ai-consulting-demo/portfolio.html)
 
