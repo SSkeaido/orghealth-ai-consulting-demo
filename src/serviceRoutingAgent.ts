@@ -17,7 +17,7 @@ export type ConsultantProfile = {
 
 export type ServiceUnit = {
   id: string;
-  wing: "和君咨询" | "和君资本" | "和君商学";
+  wing: "恒远咨询" | "恒远资本" | "恒远商学";
   name: string;
   services: string[];
   keywords: string[];
@@ -68,7 +68,7 @@ export type ConsultingRouteResult = {
 export const serviceUnits: ServiceUnit[] = [
   {
     id: "strategy",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "企业战略规划（演示）",
     services: ["企业战略规划"],
     keywords: ["战略", "增长", "竞争", "商业模式", "集团", "行业", "决策"],
@@ -76,7 +76,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "planning",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "企业和政府的五年规划（演示）",
     services: ["企业和政府的五年规划"],
     keywords: ["五年规划", "政府规划", "长期规划"],
@@ -84,7 +84,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "organization",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "组织、流程和管控（演示）",
     services: ["组织、流程和管控"],
     keywords: ["组织", "流程", "协同", "权责", "执行", "管控", "交付"],
@@ -92,7 +92,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "people",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "人力资源和企业文化（演示）",
     services: ["人力资源和企业文化"],
     keywords: ["人力", "人才", "文化", "绩效", "激励", "管理者", "梯队"],
@@ -100,7 +100,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "market",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "品牌规划和营销咨询（演示）",
     services: ["品牌规划和营销咨询"],
     keywords: ["品牌", "营销", "客户", "销售", "定价", "获客", "增长"],
@@ -108,7 +108,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "operations",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "精益生产和供应链管理（演示）",
     services: ["精益生产和供应链管理"],
     keywords: ["交付", "质量", "供应链", "生产", "库存", "成本", "效率"],
@@ -116,7 +116,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "digital",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "数字化转型和AI应用（演示）",
     services: ["数字化转型和AI应用"],
     keywords: ["数字", "数据", "系统", "AI", "信息", "流程"],
@@ -124,7 +124,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "risk",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "内控、风险和合规管理（演示）",
     services: ["内控、风险和合规管理"],
     keywords: ["治理", "风险", "合规", "内控", "股权", "危机", "决策"],
@@ -132,7 +132,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "entrepreneur",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "科技创业咨询和辅导（演示）",
     services: ["科技创业咨询和辅导"],
     keywords: ["科技创业", "创业", "创新", "新业务", "商业化", "孵化"],
@@ -140,7 +140,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "global",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "出海和全球化咨询（演示）",
     services: ["出海和全球化咨询"],
     keywords: ["出海", "全球化", "海外", "国际市场"],
@@ -148,7 +148,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "regional",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "区域经济和产业规划（演示）",
     services: ["区域经济和产业规划"],
     keywords: ["区域经济", "产业规划", "产业集群", "区域发展"],
@@ -156,7 +156,7 @@ export const serviceUnits: ServiceUnit[] = [
   },
   {
     id: "park",
-    wing: "和君咨询",
+    wing: "恒远咨询",
     name: "园区发展规划和运营管理（演示）",
     services: ["园区发展规划和运营管理"],
     keywords: ["园区", "园区运营", "招商", "产业园"],
@@ -513,6 +513,6 @@ export function routeConsultingServices(input: {
     cases,
     consultants,
     boundary:
-      "业务单元名称与咨询师资料均为原型演示；正式推荐还需接入和君真实组织、顾问履历、项目冲突与档期数据。",
+      "业务单元名称与咨询师资料均为原型演示；正式推荐还需接入恒远真实组织、顾问履历、项目冲突与档期数据。",
   };
 }

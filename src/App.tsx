@@ -56,7 +56,7 @@ function Landing({
     <main className="landing">
       <header className="landing__nav">
         <a className="brand">
-          <span>和</span> 和君咨询
+          <span>恒</span> 恒远咨询
         </a>
         <div>
           <span className="quiet-pill">企业健康初诊</span>
@@ -70,7 +70,7 @@ function Landing({
           <em>真正卡在哪里。</em>
         </h1>
         <p>
-          上传经营资料、记录关键访谈，和君企业健康初诊会把零散证据整理为 56
+          上传经营资料、记录关键访谈，恒远企业健康初诊会把零散证据整理为 56
           项可追溯诊断，并形成优先级清晰的改进报告。
         </p>
       </section>
@@ -250,7 +250,7 @@ function Workspace({
     <div className="app-shell">
       <aside className="sidebar">
         <button className="brand brand--button" onClick={onExit}>
-          <span>和</span> 和君咨询
+          <span>恒</span> 恒远咨询
         </button>
         <div className="project-mini">
           <small>当前项目</small>

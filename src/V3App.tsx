@@ -57,10 +57,10 @@ function V3Top({
       <a
         className="v3-product-name"
         href="?v=3"
-        aria-label="返回和君咨询企业健康初诊首页"
+        aria-label="返回恒远咨询企业健康初诊首页"
       >
-        <span>和君咨询 · 企业健康初诊</span>
-        <small>HEJUN CONSULTING{edition === "3.1" ? " · V3.1" : ""}</small>
+        <span>恒远咨询 · 企业健康初诊</span>
+        <small>HENGYUAN CONSULTING{edition === "3.1" ? " · V3.1" : ""}</small>
       </a>
       {step === "about" ? (
         <div className="v3-product-meta">
@@ -139,7 +139,7 @@ export function V3Landing({
       <V3Top />
       <section className="v3-site-hero">
         <div className="v3-site-copy">
-          <p>HEJUN CONSULTING · 企业健康初诊</p>
+          <p>HENGYUAN CONSULTING · 企业健康初诊</p>
           <h1>
             用10分钟，看清企业
             <br />
@@ -381,7 +381,7 @@ export function V3Landing({
         </section>
       )}
       <footer className="v3-site-footer">
-        <strong>和君咨询 · 企业健康初诊</strong>
+        <strong>恒远咨询 · 企业健康初诊</strong>
         <span>你的诊断信息不会在未经同意时自动提交给销售人员。</span>
       </footer>
     </main>
@@ -409,7 +409,7 @@ function V3Gateway({ onEnter }: { onEnter: () => void }) {
         <V3Top step="about" />
         <section className="v3-site-hero v3-gateway-hero">
           <div className="v3-site-copy">
-            <p>HEJUN CONSULTING · 企业健康初诊</p>
+            <p>HENGYUAN CONSULTING · 企业健康初诊</p>
             <h1>
               先看懂企业问题，
               <br />
@@ -523,7 +523,7 @@ function V3Gateway({ onEnter }: { onEnter: () => void }) {
         </section>
       )}
       <footer className="v3-site-footer">
-        <strong>和君咨询 · 企业健康初诊</strong>
+        <strong>恒远咨询 · 企业健康初诊</strong>
         <span>未经确认，诊断信息不会自动提交给咨询顾问或销售人员。</span>
       </footer>
     </main>
@@ -610,7 +610,7 @@ function V31PrivacyGate({ onAccept }: { onAccept: () => void }) {
             <div>
               <p>企业诊断数据知情说明</p>
               <h2 id="v31-privacy-title" ref={titleRef} tabIndex={-1}>
-                你的诊断内容默认不会交给和君
+                你的诊断内容默认不会交给恒远
               </h2>
               <span id="v31-privacy-summary">
                 请确认数据如何处理、什么情况下可以提交，以及案例授权与咨询授权的区别。
@@ -634,7 +634,7 @@ function V31PrivacyGate({ onAccept }: { onAccept: () => void }) {
             <div>
               <h3>不会自动形成销售线索</h3>
               <p>
-                完成评测不等于向和君申请咨询。未经企业主动授权，咨询师、销售人员和后台运营人员无法查看本次诊断内容。
+                完成评测不等于向恒远申请咨询。未经企业主动授权，咨询师、销售人员和后台运营人员无法查看本次诊断内容。
               </p>
             </div>
           </article>
@@ -654,7 +654,7 @@ function V31PrivacyGate({ onAccept }: { onAccept: () => void }) {
             <div>
               <h3>只有企业主动申请咨询时才选择提交</h3>
               <p>
-                结果页会单独展示授权入口。企业可以先查看即将提交的字段，再决定是否把背景、问题描述和初诊结果交给和君。
+                结果页会单独展示授权入口。企业可以先查看即将提交的字段，再决定是否把背景、问题描述和初诊结果交给恒远。
               </p>
             </div>
           </article>
@@ -816,7 +816,7 @@ function V3Entry({
           {edition === "3.1" && privacyAccepted ? (
             <section className="v31-privacy-confirmed" role="status">
               <span>隐私说明已阅读</span>
-              <strong>当前诊断仍仅在浏览器内处理，和君不可见</strong>
+              <strong>当前诊断仍仅在浏览器内处理，恒远不可见</strong>
               <button onClick={() => setPrivacyAccepted(false)}>
                 重新查看说明
               </button>
@@ -829,7 +829,7 @@ function V3Entry({
                   <p>PRIVACY BY DEFAULT</p>
                   <h2>填写内容默认不离开当前浏览器</h2>
                 </div>
-                <strong>当前状态：和君不可见</strong>
+                <strong>当前状态：恒远不可见</strong>
               </header>
               <div>
                 <span>不自动提交给咨询师、销售或后台人员</span>
@@ -837,7 +837,7 @@ function V3Entry({
                 <span>当前原型仅保存在运行内存，刷新或关闭后清除</span>
               </div>
               <footer>
-                只有你在结果页主动选择“申请咨询”并确认提交范围后，指定信息才可以交给和君。加密云端临时保险箱尚未接入本原型。
+                只有你在结果页主动选择“申请咨询”并确认提交范围后，指定信息才可以交给恒远。加密云端临时保险箱尚未接入本原型。
               </footer>
             </section>
           ) : null}
@@ -1145,7 +1145,7 @@ function V3Entry({
         </>
       )}
       <footer className="v3-site-footer">
-        <strong>和君咨询 · 企业健康初诊</strong>
+        <strong>恒远咨询 · 企业健康初诊</strong>
         <span>未经你确认，诊断信息不会自动提交给咨询顾问或销售人员。</span>
       </footer>
     </main>
@@ -1446,7 +1446,7 @@ function V3Analysis({
         <header>
           <div>
             <p>CONSULTING SERVICE ROUTER</p>
-            <h2>从企业问题，路由到和君业务与咨询师</h2>
+            <h2>从企业问题，路由到恒远业务与咨询师</h2>
           </div>
           <span>原型演示 · 推荐结果需人工确认</span>
         </header>
@@ -1480,7 +1480,7 @@ function V3Analysis({
         <section className="v3-service-units">
           <header>
             <h3>建议承接业务单元</h3>
-            <span>依据《和君集团简介V2026》中的公开业务范围映射</span>
+            <span>依据恒远提供的管理咨询业务范围映射</span>
           </header>
           <div>
             {serviceRouting.routes.map((route, index) => (
@@ -1553,7 +1553,7 @@ function V3Analysis({
                 </section>
                 <blockquote>“{match.caseProfile.testimonial}”</blockquote>
                 <footer>
-                  演示数据，不代表和君真实项目或客户评价；正式上线需由案例库提供可核验口径。
+                  演示数据，不代表恒远真实项目或客户评价；正式上线需由案例库提供可核验口径。
                 </footer>
               </article>
             ))}
@@ -1625,13 +1625,13 @@ function V3Analysis({
           <header>
             <div>
               <p>ENTERPRISE CONTROLLED DISCLOSURE</p>
-              <h3>是否把本次初诊交给和君？</h3>
+              <h3>是否把本次初诊交给恒远？</h3>
               <span>
-                默认不提交。只有企业主动授权后，和君才能看到你选择提交的内容并联系你。
+                默认不提交。只有企业主动授权后，恒远才能看到你选择提交的内容并联系你。
               </span>
             </div>
             <strong>
-              {showConsent ? "正在确认授权范围" : "和君当前不可见"}
+              {showConsent ? "正在确认授权范围" : "恒远当前不可见"}
             </strong>
           </header>
           {!showConsent ? (
@@ -1700,7 +1700,7 @@ function V3Analysis({
                 <div className="v3-consent-preview" role="status">
                   <strong>授权预览已生成，尚未提交</strong>
                   <span>
-                    当前原型没有后端提交接口，因此和君仍然看不到这些信息。接入正式授权与审计服务后才能完成提交。
+                    当前原型没有后端提交接口，因此恒远仍然看不到这些信息。接入正式授权与审计服务后才能完成提交。
                   </span>
                 </div>
               )}
@@ -1921,7 +1921,7 @@ function V3Workspace({
       <aside className="v3-sidebar">
         <button className="v2-brand" onClick={onExit}>
           <span>O</span>
-          <b>和君诊断</b>
+          <b>恒远诊断</b>
           <em>V{edition}</em>
         </button>
         <div className="v3-company">
